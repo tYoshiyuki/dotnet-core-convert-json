@@ -26,6 +26,7 @@ namespace DotNetCoreConvertJson.Models
         public SubSampleModel SubSampleModel { get; set; }
     }
 
+    [DataContract]
     public class SubSampleModel
     {
         [DataMember(Name = "intValue")]
