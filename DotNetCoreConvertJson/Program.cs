@@ -28,10 +28,12 @@ namespace DotNetCoreConvertJson
                 SubSampleModel = new SubSampleModel { IntValue = 20, StringValue = "DEF" }
             };
 
-            using MemoryStream ms = new MemoryStream();
-            var serializer = new DataContractJsonSerializer(typeof(SampleModel), settings);
-            serializer.WriteObject(ms, model);
-            Console.WriteLine(Encoding.UTF8.GetString(ms.ToArray()));
+            using (MemoryStream ms = new MemoryStream())
+            {
+                var serializer = new DataContractJsonSerializer(typeof(SampleModel), settings);
+                serializer.WriteObject(ms, model);
+                Console.WriteLine(Encoding.UTF8.GetString(ms.ToArray()));
+            }
         }
     }
 }
